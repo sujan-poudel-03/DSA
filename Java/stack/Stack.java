@@ -1,3 +1,5 @@
+package Java.stack;
+
 public class Stack {
     static int MAXLEN = 10;
     static int top = -1;
