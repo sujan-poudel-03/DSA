@@ -6,7 +6,7 @@ int top = -1;
 
 /* Check if the stack is full */
 int isFull() {
-   if (top == MAXSIZE)
+   if (top == MAXSIZE-1)
       return 1;
    else
       return 0;
@@ -68,6 +68,10 @@ int main() {
    push(9);
    push(1);
    push(12);
+   push(15);
+   push(12);
+   push(15);
+   // stack full at this point so displays stack full error
    push(15);
 
    printf("Element at top of the stack: %d\n", peek());
