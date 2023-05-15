@@ -66,10 +66,10 @@ void main() {
    int size = sizeof(arr) / sizeof(arr[0]);
    printf("Size of array is : %d \n", size);
 
-   traversal(arr, size);
+   // traversal(arr, size);
 
-   insert(arr, size, 2, 10);
+   // insert(arr, size, 2, 10);
    delete(arr, size, 2);
-   search(arr, size, 7);
-   update(arr, size, 2, 10);
+   // search(arr, size, 7);
+   // update(arr, size, 2, 10);
 }

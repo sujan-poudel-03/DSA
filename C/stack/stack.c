@@ -1,3 +1,5 @@
+//skdhg
+
 #include <stdio.h>
 
 int MAXSIZE = 8;
@@ -6,7 +8,7 @@ int top = -1;
 
 /* Check if the stack is full */
 int isFull() {
-   if (top == MAXSIZE)
+   if (top == MAXSIZE-1)
       return 1;
    else
       return 0;
@@ -61,6 +63,20 @@ void display() {
    }
 }
 
+/* Search element in stack */
+void search(int element) {
+   printf("-------------------Search Operation------------------- \n");
+
+   for (int i = 0; i < top; i++) {
+      if (stack[i] == element) {
+         printf("Element found at index %d \n", i);
+         return;
+      }
+   }
+
+   printf("Element not found \n");
+}
+
 int main() {
    // push items on to the stack
    push(3);
@@ -83,6 +99,9 @@ int main() {
 
    // print stack data
    display();
+
+   // search element in stack
+   search(9);
 
    return 0;
 }
