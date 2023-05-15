@@ -85,6 +85,10 @@ int main() {
    push(1);
    push(12);
    push(15);
+   push(12);
+   push(15);
+   // stack full at this point so displays stack full error
+   push(15);
 
    printf("Element at top of the stack: %d\n", peek());
    printf("Elements: \n");
