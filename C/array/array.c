@@ -69,14 +69,6 @@ void update(int arr[], int size, int index, int element) {
 void main() {
     int arr[10] = {1, 3, 5, 7, 9};
 
-<<<<<<< HEAD
-   // traversal(arr, size);
-
-   // insert(arr, size, 2, 10);
-   delete(arr, size, 2);
-   // search(arr, size, 7);
-   // update(arr, size, 2, 10);
-=======
     int size = 5;
     printf("Size of array is : %d \n", size);
 
@@ -86,5 +78,4 @@ void main() {
     delete (arr, size, 2);
     search(arr, size, 7);
     update(arr, size, 2, 10);
->>>>>>> ff6a953028974cb83ab15fd202203cd7f2b548d9
 }
