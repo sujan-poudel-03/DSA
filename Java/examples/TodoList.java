@@ -23,7 +23,7 @@ public class TodoList {
             System.out.println("List is full, cannot add more tasks!");
             return;
         }
-        
+
         Todo todo = new Todo(task);
 
         todo.setDone(done);
@@ -39,12 +39,11 @@ public class TodoList {
 
         System.out.println("=====Tasks=====");
 
-        for(Todo task : tasks) {
+        for (Todo task : tasks) {
             System.out.println("Task: " + task.task + " | Done: " + task.done);
         }
     }
 }
-
 
 class Todo {
     public String task;
