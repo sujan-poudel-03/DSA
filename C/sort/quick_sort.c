@@ -1,57 +1,51 @@
-#include <stdio.h>  
-/* function that consider last element as pivot,  
-place the pivot at its exact position, and place  
-smaller elements to left of pivot and greater  
-elements to right of pivot.  */  
-int partition (int a[], int start, int end)  
-{  
-    int pivot = a[end]; // pivot element  
-    int i = (start - 1);  
-  
-    for (int j = start; j <= end - 1; j++)  
-    {  
-        // If current element is smaller than the pivot  
-        if (a[j] < pivot)  
-        {  
-            i++; // increment index of smaller element  
-            int t = a[i];  
-            a[i] = a[j];  
-            a[j] = t;  
-        }  
-    }  
-    int t = a[i+1];  
-    a[i+1] = a[end];  
-    a[end] = t;  
-    return (i + 1);  
-}  
-  
-/* function to implement quick sort */  
-void quick(int a[], int start, int end) /* a[] = array to be sorted, start = Starting index, end = Ending index */  
-{  
-    if (start < end)  
-    {  
-        int p = partition(a, start, end); //p is the partitioning index  
-        quick(a, start, p - 1);  
-        quick(a, p + 1, end);  
-    }  
-}  
-  
-/* function to print an array */  
-void printArr(int a[], int n)  
-{  
-    int i;  
-    for (i = 0; i < n; i++)  
-        printf("%d ", a[i]);  
-}  
-int main()  
-{  
-    int a[] = { 24, 9, 29, 14, 19, 27 };  
-    int n = sizeof(a) / sizeof(a[0]);  
-    printf("Before sorting array elements are - \n");  
-    printArr(a, n);  
-    quick(a, 0, n - 1);  
-    printf("\nAfter sorting array elements are - \n");    
-    printArr(a, n);  
-      
-    return 0;  
-} 
+#include <stdio.h>
+
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int partition(int arr[], int low, int high) {
+    int pivot = arr[high];
+    int i = (low - 1);
+
+    for (int j = low; j <= high - 1; j++) {
+        if (arr[j] < pivot) {
+            i++;
+            swap(&arr[i], &arr[j]);
+        }
+    }
+    swap(&arr[i + 1], &arr[high]);
+    return (i + 1);
+}
+
+void quickSort(int arr[], int low, int high) {
+    if (low < high) {
+        int pi = partition(arr, low, high);
+
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
+    }
+}
+
+int main() {
+    int arr[] = {10, 7, 8, 9, 1, 5};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    printf("Unsorted array: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    quickSort(arr, 0, n - 1);
+
+    printf("Sorted array: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
