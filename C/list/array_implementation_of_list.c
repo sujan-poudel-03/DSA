@@ -73,11 +73,11 @@ int main() {
     insert(&myList, 15, 1);   // Insert 15 at position 1
     insert(&myList, 55, 1);   // Insert 15 at position 1
 
-    display(&myList);         // Output: List: 5 15 10
+    display(&myList);         // Output: List: 5 55 15 10
 
     update(&myList, 20, 1);   // Update element at position 1 to 20
 
-    display(&myList);         // Output: List: 5 20 10
+    display(&myList);         // Output: List: 5 20 15 10
 
     removeElement(&myList, 0);    // Remove element at position 0
 
