@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <string.h>
-
 struct example
 {
     int id;
@@ -10,7 +9,6 @@ struct example
 
 int main() {
     struct example ex1;
-
     // Assign values to the structure members
     ex1.id = 1;
     ex1.gender = 'M';
@@ -20,6 +18,5 @@ int main() {
     printf("ID: %d\n", ex1.id);
     printf("Name: %s\n", ex1.name);
     printf("Gender: %c\n", ex1.gender);
-
     return 0;
 }
